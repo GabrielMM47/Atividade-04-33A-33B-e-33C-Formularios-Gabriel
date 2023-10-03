@@ -1,0 +1,85 @@
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Gabriel Martins Mendes</title>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="conteudo-principal">
+    <div class="fundo-embarcado"></div>
+    <div class="area-embarcada">
+
+  <h1>Gabriel Martins Mendes</h1>
+  <h2>Um pouco sobre mim:</h2>
+  <p>Tenho 19 anos e atualmente estou cursando meu 2º período de Engenharia da Computação na PUC-Rio</p>
+  <h2>Meus hobbies</h2>
+  <ul>
+    {% for hobbie in hobbie %}
+      <li>{{ hobbie.title }} 
+        <a href="/hobbie/update/{{ hobbie.id }}"><button><b>Atualizar</b></button></a>
+        <a href="/hobbie/delete/{{ hobbie.id }}"><button><b>Remover</b></button></a>
+      </li>
+    {% endfor %}
+  </ul> 
+  <a href="/hobbie">
+    <button><b>Adicionar Hobbie</b></button>
+  </a>
+  <p>
+    Como foi dito acima, uma das coisas que eu mais gosto são carros e, por isso, mostrarei os meus seis modelos de carro preferidos e falarei um pouco mais sobre o primeiro colocado da lista e suas principais características.
+  </p>
+  <h2>Carros favoritos</h2>
+ <ol>
+    {% for carro in carro %}
+      <li>{{ carro.title }}
+        <a href="/carro/update/{{ carro.id }}"><button><b>Atualizar</b></button></a>
+        <a href="/carro/delete/{{ carro.id }}"><button><b>Remover</b></button></a>
+      </li>
+    {% endfor %}
+  </ol> 
+  <a href="/carro">
+    <button><b>Adicionar Carro</b></button>
+  </a>
+  <p><b>Nessa página vou falar apenas sobre o primeiro colocado:</b></p>      
+  <h3><u>1º Lugar: McLaren 720s</u></h3>
+  <div class="align-center">
+    <img src="https://mclaren.scene7.com/is/image/mclaren/720S-Coupe_hero:crop-16x9?wid=1980&hei=1114" width="500">
+  </div>
+  <p>
+    O McLaren 720S é fruto da filosofia de design da McLaren: cada detalhe tem um propósito. A simplicidade potente e integridade dessa essência é o que dá forma a carros deslumbrantes, a qual no caso desse supercarro é inspirada no formato de uma gota, a forma aerodinâmica perfeita da natureza, que ajuda a render um desempenho excepcional, além de oferecer eficiência aerodinâmica, estando presente emcada detalhe do design. Além do design inovador o 720s possui um motor V8 biturbo que lhe entrega um excelente desempenho nas pistas.
+  </p>
+  <p><b><u>Ficha técnica:</u></b></p>
+ <div class="align-center">
+    <table border="1">
+      <tr>
+        {% for ficha in ficha %}
+          <th>{{ ficha.title }}</th>
+        {% endfor %}
+      </tr>
+      <tr style="text-align: center;">
+        {% for ficha in ficha %}
+          <td>{{ ficha.dados }}</td>
+        {% endfor %}
+      </tr>
+    </table>
+  </div> 
+  <br>
+  <p>
+    <b><i><u>Clique para conferir mais detalhes:</u></i></b>
+  </p>
+  <div class="align-center">
+    <a href="https://cars.mclaren.com/br-pt/super-series/720s" target="_blank">
+      <button class="btn"><b>Site Oficial</b></button>
+    </a>
+  </div>
+      </div> 
+  </div>
+</body>
+
+</html>

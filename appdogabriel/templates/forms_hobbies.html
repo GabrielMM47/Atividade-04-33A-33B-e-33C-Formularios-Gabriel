@@ -1,0 +1,36 @@
+<h1>{{ action }} Hobbie</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Título:</label>
+    <input name="title" value="{{ hobbie.title }}">
+  </div>
+
+  <div>
+    <label>Frequência:</label>
+    <select name="frequencia">
+      {% for opt in options_freq %}
+        <option value="{{ opt.0 }}">{{ opt.1 }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div>
+    <label>Prioridade:</label>
+    <input type="number" name="prioridade" value="{{ hobbie.prioridade }}">
+  </div>
+
+  <div>
+    <label>Categoria:</label>
+    <select name="categoria">
+      {% for opt in options_cat %}
+        <option value="{{ opt.0 }}">{{ opt.1 }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <input type="submit" value="Registrar">
+  <a href="home"><button><b>Cancelar</b></button></a>
+  
+</form>

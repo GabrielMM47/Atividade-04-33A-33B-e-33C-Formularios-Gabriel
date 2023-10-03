@@ -1,0 +1,41 @@
+<h1>{{ action }} Carro</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Título:</label>
+    <input name="title" value="{{ carro.title }}">
+  </div>
+
+  <div>
+    <label>Modelo:</label>
+    <input name="modelo" value="{{ carro.modelo }}">
+  </div>
+
+  <div>
+    <label>Montadora:</label>
+    <input name="montadora" value="{{ carro.montadora }}">
+  </div>
+
+  <div>
+    <label>Carroceria:</label>
+    <select name="carroceria">
+      {% for opt in options_carroceria %}
+        <option value="{{ opt.0 }}">{{ opt.1 }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div>
+    <label>Tipo do Motor:</label>
+    <select name="tipo_motor">
+      {% for opt in options_tipo %}
+        <option value="{{ opt.0 }}">{{ opt.1 }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <input type="submit" value="Registrar">
+  <a href="home"><button><b>Cancelar</b></button></a>
+  
+</form>

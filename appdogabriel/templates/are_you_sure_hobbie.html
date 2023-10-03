@@ -1,0 +1,7 @@
+Você tem ceretza que deseja remover o hobbie "{{ hobbie.title }}"?
+
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" name="confirm" value="Sim">
+  <input type="submit" value="Não">
+</form>

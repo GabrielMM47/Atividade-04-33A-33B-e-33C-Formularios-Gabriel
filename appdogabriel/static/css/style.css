@@ -1,0 +1,79 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  background-image: url('https://i.imgur.com/HgWHDpF.jpg');
+  background-size: cover;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  text-align: justify;
+}
+
+.btn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15;
+  width: 100px;
+  height: 35px;
+  background-color: black;
+  border: none;
+  color: white;
+}
+
+.button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15;
+  width: 120px;
+  height: 20px;
+  background-color: black;
+  border: none;
+  color: white;
+}
+  
+.fundo-embarcado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('caminho-da-imagem.jpg');
+    background-size: cover;
+    filter: blur(10px); /* Adiciona o efeito de desfoque */
+    z-index: -1; /* Envia o fundo para trás, atrás dos outros elementos */
+}
+
+.conteudo-principal {
+    position: relative;
+    padding: 20px; /* Adiciona um espaçamento para o conteúdo */
+}
+
+.area-embarcada {
+    position: relative; /* Muda para relativo para que a rolagem funcione */
+    background-color: rgba(255, 255, 255, 0.8); /* Define uma cor de fundo com transparência */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    max-width: 800px; /* Define uma largura máxima para a área embaçada */
+}
