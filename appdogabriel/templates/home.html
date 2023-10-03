@@ -1,4 +1,5 @@
 {% load static %}
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -12,6 +13,11 @@
 </head>
 
 <body>
+
+  {% if request.user.is_authenticated %}
+    <b style="color: white;">Bem-vindo, {{request.user.username}}</b> <br> 
+    <a href="/users/logout"><button><b>Sair</b></button></a>
+  {% endif %}
   <div class="conteudo-principal">
     <div class="fundo-embarcado"></div>
     <div class="area-embarcada">
