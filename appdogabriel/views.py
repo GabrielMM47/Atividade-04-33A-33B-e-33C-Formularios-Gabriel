@@ -123,7 +123,7 @@ def login_user(request):
     if user != None:
       login(request, user)
     else:
-      return render(request, "login.html", context={"error_msg": "Usuário não existe"})
+      return render(request, "login.html", context={"error_msg": "Usuário ou senha inválidos"})
     print(request.user)
     print(request.user.is_authenticated)
     if request.user.is_authenticated:
